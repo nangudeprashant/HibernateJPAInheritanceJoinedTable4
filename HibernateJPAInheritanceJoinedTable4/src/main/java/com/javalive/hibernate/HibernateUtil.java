@@ -15,7 +15,20 @@ import com.javalive.entity.CreditAccount;
 import com.javalive.entity.DebitAccount;
 
 /**
- * 
+ * Each subclass can also be mapped to its own table. This is also called
+ * table-per-subclass mapping strategy. An inherited state is retrieved by
+ * joining with the table of the superclass. A discriminator column is not
+ * required for this mapping strategy. Each subclass must, however, declare a
+ * table column holding the object identifier. The JOINED table inheritance
+ * strategy addresses the data integrity concerns because every subclass is
+ * associated with a different table. Polymorphic queries or @OneToMany base
+ * class associations don’t perform very well with this strategy. However,
+ * polymorphic @ManyToOne associations are fine, and they can provide a lot of
+ * value. 
+ * If data consistency is more important than performance and you need
+ * polymorphic queries and relationships, the joined strategy is probably your
+ * best option. 
+ * Syntax: @Inheritance(strategy = InheritanceType.JOINED)
  */
 public class HibernateUtil {
 
