@@ -20,23 +20,15 @@ public class MainApp {
 			transaction = session.getTransaction();
 			transaction.begin();
 
-			// save the account object
-
-			Account account2 = new Account();
-			account2.setBalance(10000.0);
-			account2.setInterestRate(10.0);
-			account2.setOwner("Ramesh");
-			session.save(account2);
-
 			DebitAccount account = new DebitAccount();
-			account.setBalance(10000.0);
+			account.setBalance(20000.0);
 			account.setInterestRate(10.0);
-			account.setOwner("Ramesh");
+			account.setOwner("Vijay");
 			account.setOverdraftFee(36d);
 			session.save(account);
 
 			CreditAccount account1 = new CreditAccount();
-			account1.setBalance(10000.0);
+			account1.setBalance(30000.0);
 			account1.setInterestRate(10.0);
 			account1.setOwner("Suresh");
 			account1.setCreditLimit(500000d);
